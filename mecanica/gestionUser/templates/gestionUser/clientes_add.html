@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href='{% static "css/styles.css" %}'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+</head>
+<body style="background: linear-gradient(to right, #a6a6a6, #ffffff); margin: 0; height: 100vh;">
+
+    <header>
+        <ul class="nav justify-content-end" style="background-color: black;">
+            <img src='{% static "img/logo2.png" %}'  style="width: 200px; position: relative; right: 980px; bottom: 5px;" alt="">
+            <li class="nav-item">
+              <a href="{% url 'index' %}" class="nav-link active" id="inicio" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; font-size: 30px; font-weight: bold; margin-top: 25px;" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; font-size: 30px; font-weight: bold; margin-top: 25px;" href="#">Informes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; font-size: 30px; font-weight: bold; margin-top: 25px;" href="#">Agenda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; font-size: 30px; font-weight: bold; margin-top: 25px;" aria-current="page" href="#">Cotizacion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; font-size: 30px; font-weight: bold; margin-top: 25px;" aria-current="page" href="#">Stock</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white; font-size: 30px; font-weight: bold; margin-top: 25px;" aria-current="page" href="#">Cliente</a>
+            </li>
+            <li class="nav-item">
+                <img src='{% static "img/usuario.png" %}'  style="margin-top: 10px; margin-right: 10px;" alt="">
+            </li>                        
+          </ul>
+    </header>
+<h1>Formulario Clientes</h1><br><br>
+
+<form action="" method ="POST">
+    {% csrf_token %}
+   <table>
+    {{ form.as_table }}
+  </table>  
+    <input type="submit" value="Agregar">
+</form>
+
+<br>
+<div id="idMensajes">
+    {% if mensaje %}
+        {{mensaje}}
+    {% endif %}    
+</div>
+
+<br>
+<a href="{% url 'crud_clientes' %}"> Volver </a>
+<br>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="module" src='{% static "js/script.js" %}'></script>   

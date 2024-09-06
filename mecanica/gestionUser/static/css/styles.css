@@ -1,0 +1,38 @@
+/* body {
+    background-image: url('{% static "img/fondo.jpg" %}');
+    background-size: cover;
+    color: red;
+    margin: 0;
+    height: 100vh;
+} */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 150px;
+}
+
+article {
+    margin: 25px; /* Espacio entre cards */
+}
+
+.card {
+    width: 500px; 
+    height: 500px;
+    background-color: transparent; 
+    transition: transform 0.3s ease; /* Animación suave al hacer zoom */
+}
+
+.card:hover { /* metodo hover */
+    transform: scale(1.1); /* Para aumentar el tamaño cuando paso el mouse*/
+    transition: 0.5s;
+}
+
+#inicio:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+
